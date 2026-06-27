@@ -1,7 +1,27 @@
-import axios from axios ;
+import axios from 'axios'
 
-const API=axios.create({
-    baseURL:"http://localhost:5000/api/articles"
+const api = axios.create({
+  baseURL: 'http://localhost:5000/api',
 })
 
-export default API
+export const getArticles = async () => {
+  const { data } = await api.get('/articles')
+  return data
+}
+
+export const getArticleById = async (id) => {
+  const { data } = await api.get(`/articles/${id}`)
+  return data
+}
+
+export const getClusters = async () => {
+  const { data } = await api.get('/articles/clusters')
+  return data
+}
+
+export const getStatus = async () => {
+  const { data } = await api.get('/articles/status')
+  return data
+}
+
+export default api

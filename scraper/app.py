@@ -1,25 +1,25 @@
-# from rss_reader import fetch_article
-# from article_parser import extract_article
-# from database import save_article
+from rss_reader import fetch_article
+from article_parser import extract_article
+from database import save_article
 from database import collection
 from clustering import create_clusters
 
-# articles=fetch_article()
+articles=fetch_article()
 
-# all_articles=[]
-# for article in articles:
-#     data=extract_article(article.link)
+all_articles=[]
+for article in articles:
+    data=extract_article(article.link)
 
-#     if data:
-#         data["url"]=article.link
-#         data["published"]=article.published
-#         data["summary"]=article.summary
+    if data:
+        data["url"]=article.link
+        data["published"]=article.published
+        data["summary"]=article.summary
 
-#         save_article(data)
+        save_article(data)
 
-#         all_articles.append(data)
+        all_articles.append(data)
 
-#         print(f"Fetched: {data['title']}")
+        print(f"Fetched: {data['title']}")
 
 
 
